@@ -1,7 +1,7 @@
 ﻿Namespace Spindle.UI.FlexForms
     <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
     Partial Class FWelcome
-        Inherits System.Windows.Forms.UserControl
+        Inherits Spindle.Business.Controls.ManagebleControl
 
         'UserControl überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
         <System.Diagnostics.DebuggerNonUserCode()>
@@ -29,7 +29,7 @@
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-            Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+            Me.BackColor = System.Drawing.SystemColors.Control
             Me.Name = "FWelcome"
             Me.ResumeLayout(False)
 

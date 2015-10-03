@@ -13,6 +13,7 @@ Namespace Spindle.Business
         Public SavePath As String = "SpindleUI"
         Public AppDataFileName As String = "SpindleUI.xml"
         Public FormTitlePrefix As String = " | SpindleUI"
+        Public ApplicationVersion As String = "0.1-a1-1.0"
 
     End Module
 
