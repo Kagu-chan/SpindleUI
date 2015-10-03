@@ -6,8 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{23F1A067-EC63-4AB6-ACB3-E97FB0BF1592}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SpindleUIInstall.My.MyApplication</StartupObject>
-    <RootNamespace>SpindleUIInstall</RootNamespace>
+    <StartupObject>My.MyApplication</StartupObject>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>SpindleUIInstall</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>

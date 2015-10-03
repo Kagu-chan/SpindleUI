@@ -6,7 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2A908478-481B-4573-B4CC-D9946AB4EAFE}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>SpindleUIBusiness</RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>SpindleUIBusiness</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>

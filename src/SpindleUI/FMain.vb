@@ -1,3 +1,11 @@
-﻿Public Class FMain
+﻿Namespace Spindle.UI
 
-End Class
+    Public Class FMain
+
+        Public Sub New()
+            InitializeComponent()
+        End Sub
+
+    End Class
+
+End Namespace
