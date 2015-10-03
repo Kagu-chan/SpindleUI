@@ -68,7 +68,7 @@
     <Compile Include="Base\AppStatus.vb" />
     <Compile Include="Base\Configuration.vb" />
     <Compile Include="Controls\ManageStyle.vb" />
-    <Compile Include="Controls\ManagebleControl.vb">
+    <Compile Include="Controls\ManagableControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />

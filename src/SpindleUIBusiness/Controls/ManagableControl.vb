@@ -7,7 +7,7 @@ Imports System.Windows.Forms
 
 Namespace Spindle.Business.Controls
 
-    Public Class ManagebleControl
+    Public Class ManagableControl
         Inherits UserControl
 
         Private _manageStyle As ManageStyle = ManageStyle.None

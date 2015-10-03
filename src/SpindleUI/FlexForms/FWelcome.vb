@@ -6,7 +6,7 @@ Option Infer On
 Namespace Spindle.UI.FlexForms
 
     Public Class FWelcome
-        Inherits Spindle.Business.Controls.ManagebleControl
+        Inherits Spindle.Business.Controls.ManagableControl
 
         Public Sub New()
             InitializeComponent()
