@@ -23,9 +23,19 @@
         'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
         <System.Diagnostics.DebuggerStepThrough()>
         Private Sub InitializeComponent()
-            components = New System.ComponentModel.Container()
+            Me.SuspendLayout()
+            '
+            'FMain
+            '
+            Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+            Me.ClientSize = New System.Drawing.Size(284, 261)
+            Me.Name = "FMain"
+            Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
             Me.Text = "Form1"
+            Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+            Me.ResumeLayout(False)
+
         End Sub
 
     End Class
