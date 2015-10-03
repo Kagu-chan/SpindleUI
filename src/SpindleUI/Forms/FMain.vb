@@ -17,7 +17,7 @@
 
         Public Sub OnFormLoad()
             _AppStatus.FormTitle = "Welcome"
-            _AppStatus.CurrentContext = New FWelcome()
+            _AppStatus.CurrentContext = New FlexForms.FWelcome()
         End Sub
 
         Public Sub OnFormTitleChanged()

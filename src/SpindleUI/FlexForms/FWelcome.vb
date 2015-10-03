@@ -1,3 +1,12 @@
-﻿Public Class FWelcome
+﻿Namespace Spindle.UI.FlexForms
 
-End Class
+    Public Class FWelcome
+
+        Public Sub New()
+            InitializeComponent()
+
+        End Sub
+
+    End Class
+
+End Namespace
