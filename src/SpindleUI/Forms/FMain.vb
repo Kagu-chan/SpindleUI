@@ -12,14 +12,21 @@
         Private Sub RegisterEvents()
             AddHandler Me.Load, AddressOf OnFormLoad
             AddHandler _AppStatus.FormTitleChanged, AddressOf OnFormTitleChanged
+            AddHandler _AppStatus.CurrentContextChanged, AddressOf OnCurrentContextChanged
         End Sub
 
         Public Sub OnFormLoad()
             _AppStatus.FormTitle = "Welcome"
+            _AppStatus.CurrentContext = New FWelcome()
         End Sub
 
         Public Sub OnFormTitleChanged()
             Me.Text = _AppStatus.FormTitle
+        End Sub
+
+        Public Sub OnCurrentContextChanged()
+            Me.Controls.Clear()
+            Me.Controls.Add(_AppStatus.CurrentContext)
         End Sub
 
     End Class

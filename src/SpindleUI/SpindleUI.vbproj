@@ -72,6 +72,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FlexForms\FWelcome.Designer.vb">
+      <DependentUpon>FWelcome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FlexForms\FWelcome.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\FMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FlexForms\FWelcome.resx">
+      <DependentUpon>FWelcome.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FMain.resx">
       <DependentUpon>FMain.vb</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +132,9 @@
       <Project>{2a908478-481b-4573-b4cc-d9946ab4eafe}</Project>
       <Name>SpindleUIBusiness</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
