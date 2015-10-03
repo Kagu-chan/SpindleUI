@@ -1,4 +1,9 @@
-﻿Namespace Spindle.Business.Persistence
+﻿Option Compare Binary
+Option Explicit On
+Option Strict On
+Option Infer On
+
+Namespace Spindle.Business.Persistence
 
     ''' <summary>
     ''' Save and Load Data

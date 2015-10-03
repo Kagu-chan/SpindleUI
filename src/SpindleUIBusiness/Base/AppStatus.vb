@@ -1,11 +1,16 @@
-﻿Imports System.Windows.Forms
+﻿Option Compare Binary
+Option Explicit On
+Option Strict On
+Option Infer On
+
+Imports System.Windows.Forms
 
 Namespace Spindle.Business
 
     Public Class AppStatus
 
         Private PersistenceManager As New Persistence.PersistenceManager()
-        Private _formTitle = String.Empty
+        Private _formTitle As String = String.Empty
         Private _currentContext As ContainerControl = Nothing
 
         Public Event FormTitleChanged As EventHandler

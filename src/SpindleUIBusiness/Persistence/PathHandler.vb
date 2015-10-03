@@ -1,4 +1,9 @@
-﻿Imports System.Environment
+﻿Option Compare Binary
+Option Explicit On
+Option Strict On
+Option Infer On
+
+Imports System.Environment
 Imports System.IO.Path
 
 Namespace Spindle.Business.Persistence

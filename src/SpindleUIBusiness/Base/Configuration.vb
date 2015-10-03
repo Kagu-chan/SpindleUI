@@ -1,4 +1,9 @@
-﻿Namespace Spindle.Business
+﻿Option Compare Binary
+Option Explicit On
+Option Strict On
+Option Infer On
+
+Namespace Spindle.Business
 
     ''' <summary>
     ''' Configuration Module (Data Storage)

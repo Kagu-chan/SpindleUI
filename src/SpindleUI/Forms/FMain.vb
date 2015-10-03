@@ -1,4 +1,9 @@
-﻿Namespace Spindle.UI
+﻿Option Compare Binary
+Option Explicit On
+Option Strict On
+Option Infer On
+
+Namespace Spindle.UI
 
     Public Class FMain
 
@@ -15,16 +20,16 @@
             AddHandler _AppStatus.CurrentContextChanged, AddressOf OnCurrentContextChanged
         End Sub
 
-        Public Sub OnFormLoad()
+        Private Sub OnFormLoad(sender As Object, e As EventArgs)
             _AppStatus.FormTitle = "Welcome"
             _AppStatus.CurrentContext = New FlexForms.FWelcome()
         End Sub
 
-        Public Sub OnFormTitleChanged()
+        Private Sub OnFormTitleChanged(sender As Object, e As EventArgs)
             Me.Text = _AppStatus.FormTitle
         End Sub
 
-        Public Sub OnCurrentContextChanged()
+        Private Sub OnCurrentContextChanged(sender As Object, e As EventArgs)
             Me.Controls.Clear()
             Me.Controls.Add(_AppStatus.CurrentContext)
         End Sub
