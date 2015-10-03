@@ -72,10 +72,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FMain.vb">
+    <Compile Include="Forms\FMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMain.Designer.vb">
+    <Compile Include="Forms\FMain.Designer.vb">
       <DependentUpon>FMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -96,7 +96,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FMain.resx">
+    <EmbeddedResource Include="Forms\FMain.resx">
       <DependentUpon>FMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
