@@ -8,7 +8,7 @@ Namespace Spindle.Business
     ''' <summary>
     ''' Configuration Module (Data Storage)
     ''' </summary>
-    Module Configuration
+    Public Module Configuration
 
         Public SavePath As String = "SpindleUI"
         Public AppDataFileName As String = "SpindleUI.xml"
@@ -16,6 +16,8 @@ Namespace Spindle.Business
         Public ApplicationVersion As String = "0.1-a1-1.0"
         Public ControlMinimumWidth As Integer = 256
         Public ControlMinimumHeight As Integer = 128
+        Public FormMinimumWidth As Integer = 854
+        Public FormMinimumHeight As Integer = 450
 
     End Module
 

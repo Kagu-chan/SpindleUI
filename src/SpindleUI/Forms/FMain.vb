@@ -23,6 +23,8 @@ Namespace Spindle.UI
         Private Sub OnFormLoad(sender As Object, e As EventArgs)
             _AppStatus.FormTitle = "Welcome"
             _AppStatus.CurrentContext = New FlexForms.FWelcome()
+
+            Me.MinimumSize = New Size(Spindle.Business.Configuration.FormMinimumWidth, Spindle.Business.Configuration.FormMinimumHeight)
         End Sub
 
         Private Sub OnFormTitleChanged(sender As Object, e As EventArgs)
