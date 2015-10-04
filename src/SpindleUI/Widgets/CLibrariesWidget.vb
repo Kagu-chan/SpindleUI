@@ -21,7 +21,13 @@ Namespace Spindle.UI.Widgets
 
         Private Sub OnFormLoad(sender As Object, e As EventArgs)
             Dim libraries As Spindle.Business.Libraries.LibraryCollection = Spindle.Business.Libraries.LibraryCollection.FindFromServer()
-
+            If IsNothing(libraries) Then
+                Me.AddControl(New Controls.CLibraryNetException())
+            Else
+                For Each library As Spindle.Business.Libraries.Library In libraries
+                    Me.AddControl(New Controls.CLibraryInfo(), library.Name)
+                Next
+            End If
         End Sub
 
     End Class

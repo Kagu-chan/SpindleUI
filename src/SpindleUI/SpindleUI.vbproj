@@ -99,6 +99,18 @@
     <Compile Include="Controls\CApplicationInfo.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\CLibraryInfo.Designer.vb">
+      <DependentUpon>CLibraryInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CLibraryInfo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CLibraryNetException.Designer.vb">
+      <DependentUpon>CLibraryNetException.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CLibraryNetException.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Widgets\CApplicationInfoWidget.Designer.vb">
       <DependentUpon>CApplicationInfoWidget.vb</DependentUpon>
     </Compile>

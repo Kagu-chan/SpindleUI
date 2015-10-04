@@ -7,6 +7,9 @@ Namespace Spindle.Business.Libraries
 
     Public Class Library
 
+        Public Name As String
+        Public Version As String
+
     End Class
 
 End Namespace

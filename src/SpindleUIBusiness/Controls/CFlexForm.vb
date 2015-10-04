@@ -50,6 +50,9 @@ Namespace Spindle.Business.Controls
             End Set
         End Property
 
+        Public Sub AddControl(newControl As Control)
+            Me.AddControl(newControl, "")
+        End Sub
 
         Public Sub AddControl(newControl As Control, text As String)
             newControl.Dock = DockStyle.Fill

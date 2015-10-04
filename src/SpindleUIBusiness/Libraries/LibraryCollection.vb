@@ -3,15 +3,32 @@ Option Explicit On
 Option Strict On
 Option Infer On
 
+Imports Newtonsoft.Json
+
 Namespace Spindle.Business.Libraries
 
     Public Class LibraryCollection
         Inherits System.Collections.CollectionBase
 
-        Public Shared Function FindFromServer() As LibraryCollection
-            Dim collection As New LibraryCollection()
+        Public Sub New()
+        End Sub
 
-            Return collection
+        Public Sub New(libraries As IEnumerable(Of Library))
+            For Each library As Library In libraries
+                Me.Add(library)
+            Next
+        End Sub
+
+        Public Shared Function FindFromServer() As LibraryCollection
+            Spindle.Business.Server.WebRequest.Request(Configuration.LibrariesUrl)
+            If Spindle.Business.Server.WebRequest.LastRequestSuceed() Then
+                Dim response As String = Spindle.Business.Server.LastContent()
+                Dim libraries As IEnumerable(Of Library) = JsonConvert.DeserializeObject(Of IEnumerable(Of Library))(response)
+
+                Return New LibraryCollection(libraries)
+            Else
+                Return Nothing
+            End If
         End Function
 
         Public Sub Add(library As Library)
