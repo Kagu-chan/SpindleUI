@@ -20,7 +20,7 @@ Namespace Spindle.UI.FlexForms
         End Sub
 
         Private Sub OnFormLoad(sender As Object, e As EventArgs)
-            Me.AddControl(New CProjectsWidget(), "Projects")
+            Me.AddControl(New Widgets.CProjectsWidget(), "Projects")
             Me.AddControl(New CApplicationInfo(), "Info")
         End Sub
 
