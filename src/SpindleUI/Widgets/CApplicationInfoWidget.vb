@@ -3,16 +3,16 @@ Option Explicit On
 Option Strict On
 Option Infer On
 
-Namespace Spindle.UI.FlexForms
+Namespace Spindle.UI.Widgets
 
-    Public Class FWelcome
+    Public Class CApplicationInfoWidget
         Inherits Spindle.Business.Controls.CFlexForm
 
         Public Sub New()
             InitializeComponent()
             RegisterEvents()
             Me.FlexStyle = Spindle.Business.Controls.FlexStyle.Both
-            Me.ArrangeStyle = Spindle.Business.Controls.ArrangeStyle.Horizontal
+            Me.ArrangeStyle = Spindle.Business.Controls.ArrangeStyle.Vertical
         End Sub
 
         Private Sub RegisterEvents()
@@ -20,8 +20,8 @@ Namespace Spindle.UI.FlexForms
         End Sub
 
         Private Sub OnFormLoad(sender As Object, e As EventArgs)
-            Me.AddControl(New Widgets.CProjectsWidget(), "Projects")
-            Me.AddControl(New Widgets.CApplicationInfoWidget(), "Info")
+            Me.AddControl(New Controls.CApplicationInfo(), "Application-Info")
+            Me.AddControl(New Controls.CAdditionalApplicationInfo(), "Additional Info")
         End Sub
 
     End Class

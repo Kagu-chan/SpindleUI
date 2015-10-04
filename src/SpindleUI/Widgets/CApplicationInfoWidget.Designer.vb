@@ -1,7 +1,7 @@
-﻿Namespace Spindle.UI
+﻿Namespace Spindle.UI.Widgets
     <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-    Partial Class CApplicationInfo
-        Inherits System.Windows.Forms.UserControl
+    Partial Class CApplicationInfoWidget
+        Inherits Spindle.Business.Controls.CFlexForm
 
         'UserControl überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
         <System.Diagnostics.DebuggerNonUserCode()>
@@ -47,13 +47,13 @@
             Me.GBMiscInformation.TabStop = False
             Me.GBMiscInformation.Text = "GroupBox1"
             '
-            'CApplicationInfo
+            'CApplicationInfoWidget
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.Controls.Add(Me.GBMiscInformation)
             Me.Controls.Add(Me.GBVersionInfo)
-            Me.Name = "CApplicationInfo"
+            Me.Name = "CApplicationInfoWidget"
             Me.ResumeLayout(False)
 
         End Sub

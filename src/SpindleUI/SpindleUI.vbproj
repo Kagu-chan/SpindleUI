@@ -87,10 +87,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Widgets\CApplicationInfo.Designer.vb">
+    <Compile Include="Controls\CAdditionalApplicationInfo.Designer.vb">
+      <DependentUpon>CAdditionalApplicationInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CAdditionalApplicationInfo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CApplicationInfo.Designer.vb">
       <DependentUpon>CApplicationInfo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\CApplicationInfo.vb">
+    <Compile Include="Controls\CApplicationInfo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\CApplicationInfoWidget.Designer.vb">
+      <DependentUpon>CApplicationInfoWidget.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\CApplicationInfoWidget.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Widgets\CProjectsWidget.Designer.vb">
@@ -129,8 +141,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Widgets\CApplicationInfo.resx">
-      <DependentUpon>CApplicationInfo.vb</DependentUpon>
+    <EmbeddedResource Include="Widgets\CApplicationInfoWidget.resx">
+      <DependentUpon>CApplicationInfoWidget.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Widgets\CProjectsWidget.resx">
       <DependentUpon>CProjectsWidget.vb</DependentUpon>

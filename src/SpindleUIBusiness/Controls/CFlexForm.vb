@@ -111,6 +111,7 @@ Namespace Spindle.Business.Controls
                 For Each currentControl As Control In _controls
                     Dim tab As New TabPage(currentControl.Text)
                     tab.Controls.Add(currentControl)
+                    tabControl.TabPages.Add(tab)
                 Next
                 tabControl.SelectedIndex = If(lastIndex >= tabControl.TabCount, 0, lastIndex)
                 Me.Controls.Add(tabControl)
