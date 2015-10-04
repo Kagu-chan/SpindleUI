@@ -46,7 +46,7 @@ Namespace Spindle.Business.Controls
             Set(value As ArrangeStyle)
                 If value = _arrangeStyle Then Return
                 _arrangeStyle = value
-                RaiseEvent FlexStyleChanged(Me, EventArgs.Empty)
+                RaiseEvent ArrangeStyleChanged(Me, EventArgs.Empty)
             End Set
         End Property
 

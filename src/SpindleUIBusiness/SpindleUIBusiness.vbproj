@@ -68,7 +68,7 @@
   <ItemGroup>
     <Compile Include="Base\AppStatus.vb" />
     <Compile Include="Base\Configuration.vb" />
-    <Compile Include="Controls\ArangeStyle.vb" />
+    <Compile Include="Controls\ArrangeStyle.vb" />
     <Compile Include="Controls\ManageStyle.vb" />
     <Compile Include="Controls\CFlexForm.vb">
       <SubType>UserControl</SubType>
