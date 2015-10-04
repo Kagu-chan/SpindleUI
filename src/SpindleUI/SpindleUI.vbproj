@@ -105,6 +105,12 @@
     <Compile Include="Widgets\CApplicationInfoWidget.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Widgets\CLibrariesWidget.Designer.vb">
+      <DependentUpon>CLibrariesWidget.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\CLibrariesWidget.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Widgets\CProjectsWidget.Designer.vb">
       <DependentUpon>CProjectsWidget.vb</DependentUpon>
     </Compile>

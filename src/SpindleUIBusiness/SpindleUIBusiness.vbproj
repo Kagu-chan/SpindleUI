@@ -73,6 +73,8 @@
     <Compile Include="Controls\CFlexForm.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Libraries\Library.vb" />
+    <Compile Include="Libraries\LibraryCollection.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -110,6 +112,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

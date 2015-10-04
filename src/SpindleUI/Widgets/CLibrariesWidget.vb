@@ -3,26 +3,25 @@ Option Explicit On
 Option Strict On
 Option Infer On
 
-Namespace Spindle.UI.FlexForms
+Namespace Spindle.UI.Widgets
 
-    Public Class FWelcome
+    Public Class CLibrariesWidget
         Inherits Spindle.Business.Controls.CFlexForm
 
         Public Sub New()
             InitializeComponent()
             RegisterEvents()
             Me.FlexStyle = Spindle.Business.Controls.FlexStyle.Both
-            Me.ArrangeStyle = Spindle.Business.Controls.ArrangeStyle.Horizontal
+            Me.ArrangeStyle = Spindle.Business.Controls.ArrangeStyle.Vertical
         End Sub
 
-        Private Sub RegisterEvents()
+        Public Sub RegisterEvents()
             AddHandler Me.Load, AddressOf OnFormLoad
         End Sub
 
         Private Sub OnFormLoad(sender As Object, e As EventArgs)
-            Me.AddControl(New Widgets.CProjectsWidget(), "Projects")
-            Me.AddControl(New Widgets.CLibrariesWidget(), "Libraries")
-            Me.AddControl(New Widgets.CApplicationInfoWidget(), "Info")
+            Dim libraries As Spindle.Business.Libraries.LibraryCollection = Spindle.Business.Libraries.LibraryCollection.FindFromServer()
+
         End Sub
 
     End Class
