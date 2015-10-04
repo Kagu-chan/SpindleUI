@@ -1,7 +1,7 @@
 ﻿Namespace Spindle.UI.FlexForms
     <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
     Partial Class FWelcome
-        Inherits Spindle.Business.Controls.ManagableControl
+        Inherits Spindle.Business.Controls.CFlexForm
 
         'UserControl überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
         <System.Diagnostics.DebuggerNonUserCode()>

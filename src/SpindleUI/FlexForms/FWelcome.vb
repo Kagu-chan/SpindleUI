@@ -6,12 +6,13 @@ Option Infer On
 Namespace Spindle.UI.FlexForms
 
     Public Class FWelcome
-        Inherits Spindle.Business.Controls.ManagableControl
+        Inherits Spindle.Business.Controls.CFlexForm
 
         Public Sub New()
             InitializeComponent()
             RegisterEvents()
-            Me.ManageStyle = Business.Controls.ManageStyle.Both
+            Me.FlexStyle = Spindle.Business.Controls.FlexStyle.Both
+            Me.ArrangeStyle = Spindle.Business.Controls.ArrangeStyle.Horizontal
         End Sub
 
         Private Sub RegisterEvents()
@@ -19,8 +20,8 @@ Namespace Spindle.UI.FlexForms
         End Sub
 
         Private Sub OnFormLoad(sender As Object, e As EventArgs)
-            Me.AddControl(New CProjectsWidget(), DockStyle.Left, "Projects")
-            Me.AddControl(New CApplicationInfo(), DockStyle.Right, "Info")
+            Me.AddControl(New CProjectsWidget(), "Projects")
+            Me.AddControl(New CApplicationInfo(), "Info")
         End Sub
 
     End Class

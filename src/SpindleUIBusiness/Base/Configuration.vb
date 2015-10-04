@@ -14,6 +14,8 @@ Namespace Spindle.Business
         Public AppDataFileName As String = "SpindleUI.xml"
         Public FormTitlePrefix As String = " | SpindleUI"
         Public ApplicationVersion As String = "0.1-a1-1.0"
+        Public ControlMinimumWidth As Integer = 256
+        Public ControlMinimumHeight As Integer = 128
 
     End Module
 
