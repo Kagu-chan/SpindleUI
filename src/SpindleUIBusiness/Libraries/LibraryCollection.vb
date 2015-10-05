@@ -25,7 +25,7 @@ Namespace Spindle.Business.Library
 
             Dim collection As New LibraryCollection()
             For Each libraryPath As String In libraryPaths
-                Dim repository As Github.Repository = Server.FetchObject(Of Github.Repository)(libraryPath)
+                Dim repository As API.Repository = Server.FetchObject(Of API.Repository)(libraryPath)
                 If Not IsNothing(repository) Then
                     collection.Add(New Library(repository))
                 End If

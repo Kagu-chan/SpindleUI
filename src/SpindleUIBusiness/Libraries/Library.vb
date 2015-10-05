@@ -9,8 +9,8 @@ Namespace Spindle.Business.Library
 
     Public Class Library
 
-        Private _repository As Github.Repository
-        Private _branch As Github.Branch
+        Private _repository As API.Repository
+        Private _branch As API.Branch
 
         Public Name As String = String.Empty
         Public Creator As String = String.Empty
@@ -29,9 +29,9 @@ Namespace Spindle.Business.Library
             Me.Name = name
         End Sub
 
-        Public Sub New(repository As Github.Repository)
+        Public Sub New(repository As API.Repository)
             _repository = repository
-            _branch = Server.FetchObject(Of Github.Branch)(_repository.branches_url.Replace("{/branch}", "/master"))
+            _branch = Server.FetchObject(Of API.Branch)(_repository.branches_url.Replace("{/branch}", "/master"))
 
             If Not IsNothing(_repository.name) Then Me.Name = _repository.name
             If Not IsNothing(_repository.owner.login) Then Me.Creator = _repository.owner.login

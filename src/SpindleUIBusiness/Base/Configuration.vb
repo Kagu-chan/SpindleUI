@@ -18,7 +18,7 @@ Namespace Spindle.Business
         Public ControlMinimumHeight As Integer = 128
         Public FormMinimumWidth As Integer = 854
         Public FormMinimumHeight As Integer = 450
-        Public LibrariesUrl As String = "http://sources.kagu-chan.de/libraries"
+        Public LibrariesUrl As String = "http://sources.kagu-chan.de/"
 
     End Module
 

@@ -3,7 +3,7 @@ Option Explicit On
 Option Strict On
 Option Infer On
 
-Namespace Spindle.Business.Github
+Namespace Spindle.Business.API
 
     Public Structure UserThin
         Public name As String
