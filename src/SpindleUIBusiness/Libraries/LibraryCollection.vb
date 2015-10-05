@@ -20,15 +20,13 @@ Namespace Spindle.Business.Library
         End Sub
 
         Public Shared Function FindFromServer() As LibraryCollection
-            Dim libraryPaths As String() = Server.FetchObject(Of String())(Configuration.LibrariesUrl)
-            If IsNothing(libraryPaths) Then Return Nothing
-
             Dim collection As New LibraryCollection()
-            For Each libraryPath As String In libraryPaths
-                Dim repository As API.Repository = Server.FetchObject(Of API.Repository)(libraryPath)
-                If Not IsNothing(repository) Then
-                    collection.Add(New Library(repository))
-                End If
+
+            Dim libraries As IEnumerable(Of API.Library) = Server.FetchObject(Of IEnumerable(Of API.Library))(Configuration.LibrariesUrl & "?request=libraries")
+            If IsNothing(libraries) Then Return collection
+
+            For Each library As API.Library In libraries
+                collection.Add(New Library(library))
             Next
             Return collection
         End Function

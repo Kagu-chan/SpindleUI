@@ -12,7 +12,10 @@ Namespace Spindle.Business.Library
         Private _repository As API.Repository
         Private _branch As API.Branch
 
+        Public Initialized As Boolean = False
         Public Name As String = String.Empty
+        Public NiceName As String = String.Empty
+        Public Streams As IEnumerable(Of String) = {}
         Public Creator As String = String.Empty
         Public PublicDomain As String = String.Empty
         Public LastCommit As String = String.Empty
@@ -27,6 +30,13 @@ Namespace Spindle.Business.Library
 
         Public Sub New(name As String)
             Me.Name = name
+        End Sub
+
+        Public Sub New(library As API.Library)
+            Me.Initialized = False
+            Me.Name = library.name
+            Me.NiceName = library.nicename
+            Me.Streams = library.streams
         End Sub
 
         Public Sub New(repository As API.Repository)

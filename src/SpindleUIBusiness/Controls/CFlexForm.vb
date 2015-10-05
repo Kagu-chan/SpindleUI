@@ -121,7 +121,8 @@ Namespace Spindle.Business.Controls
             Else
                 Dim i As Integer = 0
                 For Each currentControl As Control In _controls
-                    Dim container As New GroupBox()
+                    Dim container As New CGroupBox
+
                     container.Text = currentControl.Text
                     container.Controls.Add(currentControl)
 

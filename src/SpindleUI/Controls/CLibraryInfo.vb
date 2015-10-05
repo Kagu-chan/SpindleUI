@@ -21,14 +21,14 @@ Namespace Spindle.UI.Controls
             InitializeComponent()
             _library = library
 
-            AddTextLabel("Version", _library.VersionString)
-            AddTextLabel("Author", _library.Creator)
-            AddTextLabel("Description", _library.Description)
-            AddTextLabel("Web", _library.PublicDomain)
-            AddTextLabel("Last Change", _library.LastCommit)
-            AddTextLabel("", _library.LastCommitDate)
-            AddTextLabel("", _library.LastCommitMessage)
-            AddTextLabel("", _library.LastCommitPublicDomain)
+            'AddTextLabel("Version", _library.VersionString)
+            'AddTextLabel("Author", _library.Creator)
+            'AddTextLabel("Description", _library.Description)
+            'AddTextLabel("Web", _library.PublicDomain)
+            'AddTextLabel("Last Change", _library.LastCommit)
+            'AddTextLabel("", _library.LastCommitDate)
+            'AddTextLabel("", _library.LastCommitMessage)
+            'AddTextLabel("", _library.LastCommitPublicDomain)
 
             AddHandler Me.SizeChanged, AddressOf OnSizeChanged
         End Sub

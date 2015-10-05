@@ -69,21 +69,31 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\Library.vb" />
     <Compile Include="Base\AppStatus.vb" />
     <Compile Include="Base\Configuration.vb" />
+    <Compile Include="Controls\CGroupBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CException.Designer.vb">
+      <DependentUpon>CException.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CException.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\Enum\ArrangeStyle.vb" />
     <Compile Include="Controls\Enum\ManageStyle.vb" />
     <Compile Include="Controls\CFlexForm.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Github\Branch.vb" />
-    <Compile Include="Github\Commit.vb" />
-    <Compile Include="Github\InnerCommit.vb" />
-    <Compile Include="Github\Parent.vb" />
-    <Compile Include="Github\Tree.vb" />
-    <Compile Include="Github\User.vb" />
-    <Compile Include="Github\Repository.vb" />
-    <Compile Include="Github\UserThin.vb" />
+    <Compile Include="API\Branch.vb" />
+    <Compile Include="API\Commit.vb" />
+    <Compile Include="API\InnerCommit.vb" />
+    <Compile Include="API\Parent.vb" />
+    <Compile Include="API\Tree.vb" />
+    <Compile Include="API\User.vb" />
+    <Compile Include="API\Repository.vb" />
+    <Compile Include="API\UserThin.vb" />
     <Compile Include="Libraries\Library.vb" />
     <Compile Include="Libraries\LibraryCollection.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
