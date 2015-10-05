@@ -76,6 +76,14 @@
     <Compile Include="Controls\CFlexForm.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Github\Branch.vb" />
+    <Compile Include="Github\Commit.vb" />
+    <Compile Include="Github\InnerCommit.vb" />
+    <Compile Include="Github\Parent.vb" />
+    <Compile Include="Github\Tree.vb" />
+    <Compile Include="Github\User.vb" />
+    <Compile Include="Github\Repository.vb" />
+    <Compile Include="Github\UserThin.vb" />
     <Compile Include="Libraries\Library.vb" />
     <Compile Include="Libraries\LibraryCollection.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -95,6 +103,7 @@
     </Compile>
     <Compile Include="Persistence\PathHandler.vb" />
     <Compile Include="Persistence\PersistenceManager.vb" />
+    <Compile Include="Server\JsonObjectFetcher.vb" />
     <Compile Include="Server\WebRequest.vb" />
   </ItemGroup>
   <ItemGroup>

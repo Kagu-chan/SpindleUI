@@ -5,7 +5,7 @@ Option Infer On
 
 Imports Newtonsoft.Json
 
-Namespace Spindle.Business.Libraries
+Namespace Spindle.Business.Library
 
     Public Class LibraryCollection
         Inherits System.Collections.CollectionBase
@@ -20,15 +20,17 @@ Namespace Spindle.Business.Libraries
         End Sub
 
         Public Shared Function FindFromServer() As LibraryCollection
-            Spindle.Business.Server.WebRequest.Request(Configuration.LibrariesUrl)
-            If Spindle.Business.Server.WebRequest.LastRequestSuceed() Then
-                Dim response As String = Spindle.Business.Server.LastContent()
-                Dim libraries As IEnumerable(Of Library) = JsonConvert.DeserializeObject(Of IEnumerable(Of Library))(response)
+            Dim libraryPaths As String() = Server.FetchObject(Of String())(Configuration.LibrariesUrl)
+            If IsNothing(libraryPaths) Then Return Nothing
 
-                Return New LibraryCollection(libraries)
-            Else
-                Return Nothing
-            End If
+            Dim collection As New LibraryCollection()
+            For Each libraryPath As String In libraryPaths
+                Dim repository As Github.Repository = Server.FetchObject(Of Github.Repository)(libraryPath)
+                If Not IsNothing(repository) Then
+                    collection.Add(New Library(repository))
+                End If
+            Next
+            Return collection
         End Function
 
         Public Sub Add(library As Library)
