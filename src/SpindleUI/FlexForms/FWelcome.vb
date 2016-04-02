@@ -11,8 +11,8 @@ Namespace Spindle.UI.FlexForms
         Public Sub New()
             InitializeComponent()
             RegisterEvents()
-            Me.FlexStyle = Spindle.Business.Controls.FlexStyle.Both
-            Me.ArrangeStyle = Spindle.Business.Controls.ArrangeStyle.Horizontal
+            Me.FlexStyle = Spindle.Business.Controls.FlexManageStyle.Both
+            Me.ArrangeStyle = Spindle.Business.Controls.FlexArrangeStyle.Horizontal
         End Sub
 
         Private Sub RegisterEvents()

@@ -21,7 +21,7 @@ Namespace Spindle.UI.Controls
             InitializeComponent()
             _library = library
 
-            'AddTextLabel("Version", _library.VersionString)
+            'AddTextLabel("Version", _library.Name)
             'AddTextLabel("Author", _library.Creator)
             'AddTextLabel("Description", _library.Description)
             'AddTextLabel("Web", _library.PublicDomain)

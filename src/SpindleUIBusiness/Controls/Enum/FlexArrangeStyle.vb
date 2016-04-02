@@ -5,10 +5,9 @@ Option Infer On
 
 Namespace Spindle.Business.Controls
 
-    Public Enum FlexStyle As Integer
-        None = 0
-        Tabs = 1
-        Both = 2
+    Public Enum FlexArrangeStyle As Integer
+        Horizontal = 0
+        Vertical = 1
     End Enum
 
 End Namespace

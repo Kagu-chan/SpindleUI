@@ -11,8 +11,9 @@ Namespace Spindle.UI.Widgets
         Public Sub New()
             InitializeComponent()
             RegisterEvents()
-            Me.FlexStyle = Spindle.Business.Controls.FlexStyle.Both
-            Me.ArrangeStyle = Spindle.Business.Controls.ArrangeStyle.Vertical
+            Me.FlexStyle = Spindle.Business.Controls.FlexManageStyle.Both
+            Me.ArrangeStyle = Spindle.Business.Controls.FlexArrangeStyle.Vertical
+            Me.DisplayType = GetType(Spindle.Business.Controls.CHeadlineBox)
         End Sub
 
         Public Sub RegisterEvents()

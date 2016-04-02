@@ -75,6 +75,7 @@ Namespace Spindle.Business.API
         Public watchers As UInteger
         Public network_count As UInteger
         Public subscribers_count As UInteger
+        Public branch As Branch
     End Structure
 
 End Namespace

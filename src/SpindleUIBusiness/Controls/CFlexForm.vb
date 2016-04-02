@@ -12,41 +12,55 @@ Namespace Spindle.Business.Controls
     Public Class CFlexForm
         Inherits UserControl
 
-        Private _flexStyle As FlexStyle = FlexStyle.None
-        Private _arrangeStyle As ArrangeStyle = ArrangeStyle.Horizontal
+        Private _flexStyle As FlexManageStyle = FlexManageStyle.None
+        Private _arrangeStyle As FlexArrangeStyle = FlexArrangeStyle.Horizontal
+        Private _displayType As Type = GetType(CGroupBox)
         Private _controls As New ObservableCollection(Of Control)()
         Private _tabMode As Boolean = False
         Private _lastTabMode As Boolean = False
 
         Public Event FlexStyleChanged As EventHandler
         Public Event ArrangeStyleChanged As EventHandler
+        Public Event DisplayTypeChanged As EventHandler
 
         Public Sub New()
             AddHandler _controls.CollectionChanged, AddressOf OnControlsCollectionChanged
             AddHandler Me.SizeChanged, AddressOf OnParentFormSizeChanged
             AddHandler Me.FlexStyleChanged, AddressOf OnFlexStyleChanged
             AddHandler Me.ArrangeStyleChanged, AddressOf OnArrangeStyleChanged
+            AddHandler Me.DisplayTypeChanged, AddressOf OnDisplayTypeChanged
         End Sub
 
-        Public Property FlexStyle As FlexStyle
+        Public Property FlexStyle As FlexManageStyle
             Get
                 Return _flexStyle
             End Get
-            Set(value As FlexStyle)
+            Set(value As FlexManageStyle)
                 If value = _flexStyle Then Return
                 _flexStyle = value
                 RaiseEvent FlexStyleChanged(Me, EventArgs.Empty)
             End Set
         End Property
 
-        Public Property ArrangeStyle As ArrangeStyle
+        Public Property ArrangeStyle As FlexArrangeStyle
             Get
                 Return _arrangeStyle
             End Get
-            Set(value As ArrangeStyle)
+            Set(value As FlexArrangeStyle)
                 If value = _arrangeStyle Then Return
                 _arrangeStyle = value
                 RaiseEvent ArrangeStyleChanged(Me, EventArgs.Empty)
+            End Set
+        End Property
+
+        Public Property DisplayType As Type
+            Get
+                Return _displayType
+            End Get
+            Set(value As Type)
+                If value = _displayType Then Return
+                _displayType = value
+                RaiseEvent DisplayTypeChanged(Me, EventArgs.Empty)
             End Set
         End Property
 
@@ -76,18 +90,22 @@ Namespace Spindle.Business.Controls
             ReCalculateControls()
         End Sub
 
+        Private Sub OnDisplayTypeChanged(sender As Object, e As EventArgs)
+            ReCalculateControls()
+        End Sub
+
         Private Sub ReCalculateControls()
             SetTabMode()
-            ArrangeControls()
+            CreateArrangeControlsCall()
         End Sub
 
         Private Sub SetTabMode()
             _lastTabMode = _tabMode
             Select Case _flexStyle
-                Case FlexStyle.Tabs
+                Case FlexManageStyle.Tabs
                     _tabMode = True
-                Case FlexStyle.Both
-                    If _arrangeStyle = ArrangeStyle.Horizontal Then
+                Case FlexManageStyle.Both
+                    If _arrangeStyle = FlexArrangeStyle.Horizontal Then
                         _tabMode = Me.Size.Width < Configuration.ControlMinimumWidth * _controls.Count
                     Else
                         _tabMode = Me.Size.Height < Configuration.ControlMinimumHeight * _controls.Count
@@ -97,7 +115,17 @@ Namespace Spindle.Business.Controls
             End Select
         End Sub
 
-        Private Sub ArrangeControls()
+        Private Sub CreateArrangeControlsCall()
+            If _displayType Is GetType(CGroupBox) Then
+                ArrangeControls(Of CGroupBox)()
+            ElseIf _displayType Is GetType(CHeadlineBox) Then
+                ArrangeControls(Of CHeadlineBox)()
+            Else
+                ArrangeControls(Of GroupBox)()
+            End If
+        End Sub
+
+        Private Sub ArrangeControls(Of T As Control)()
             Dim lastIndex As Integer = 0
             Dim tabControl As TabControl = Nothing
             If _lastTabMode Then
@@ -121,12 +149,12 @@ Namespace Spindle.Business.Controls
             Else
                 Dim i As Integer = 0
                 For Each currentControl As Control In _controls
-                    Dim container As New CGroupBox
+                    Dim container As T = Activator.CreateInstance(Of T)
 
                     container.Text = currentControl.Text
                     container.Controls.Add(currentControl)
 
-                    If _arrangeStyle = ArrangeStyle.Horizontal Then
+                    If _arrangeStyle = FlexArrangeStyle.Horizontal Then
                         Dim singleSize As Integer = CInt(Math.Round(Me.Size.Width / _controls.Count))
                         container.Size = New Size(singleSize, Me.Size.Height)
                         container.Location = New Point(i * singleSize, 0)
